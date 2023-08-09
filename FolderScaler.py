@@ -1,16 +1,25 @@
-# Scales folders using data augmentation techniques but difference between fast.ai implementation is that it saves results on user machine
+"""
+Scales and augments images within a directory by introducing various modifications with varying probabilities. 
+    - 10% chance of horizontal flip.
+    - 40% chance of Gaussian blurring.
+    - 50% chance of edge enhancement.
+    - Random brightness adjustments between -100 and 100.
+    - Random rotation between -10 and 10 degrees.
+    - Random shift in both X and Y directions.
+    - Random noise addition.
 
-# May want to change so all images are small, larger ones may take longer to augment *****
+Parameters:
+- directory (str): The path to the root directory containing sub-folders with images.
 
-# Changes that may need to be made
-# 1. shifting may result in images becoming out of view 
-# 2. Maybe alter resize factor
+Returns:
+- None. For every image found in the directory, scaled and augmented versions are saved alongside the original with "_modified" appended to their names
+"""
 
 import os, cv2, random
 import numpy as np
-def folderScaler(directory):
+def folder_scaler(directory):
     if os.path.exists(directory): # directory exists
-        scale = 22 # Scales folder by 22x, this number can change in future currently testing
+        scale = 5 # Scales folder by 5x, this number can change in future currently testing
         for folder in os.listdir(directory):
             folder_directory = os.path.join(directory, folder)
             for filename in os.listdir(folder_directory): # images in file
@@ -22,11 +31,7 @@ def folderScaler(directory):
                         for _ in range(scale):
                             image = cv2.imread(file_directory)
 
-                            # resize
-                            scaleFactor = random.uniform(0.25, 2) 
-                            image = cv2.resize(image, None, fx = scaleFactor, fy = scaleFactor)
-
-                            #flip horizontal 10% chance
+                            # flip horizontal 10% chance
                             if(random.randint(1,10) >= 10):
                                 image = cv2.flip(image,1)
 
