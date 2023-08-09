@@ -14,10 +14,10 @@ Returns:
 - None: The function terminates the program if the validation conditions are not met.
 
 """
-from FolderScaler import folder_scaler
+from folder_scaler import folder_scaler
 from bing_image_downloader import downloader
 import os, shutil
-import FolderScaler as fs
+import folder_scaler as fs
 from fastai.vision.all import *
 
 def make_model_folder(directory, model_Name):

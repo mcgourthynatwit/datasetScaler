@@ -1,6 +1,6 @@
 from fastai.vision.all import *
 from functions.make_model_folder import makeModelFolderDirectory
-import FolderScaler as fs
+import folder_scaler as fs
 
 # Specify path to Caltech-101 dataset
 path_caltech = Path(r"C:\Users\mcgourthyn\Pictures\caltech-101")

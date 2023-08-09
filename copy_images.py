@@ -1,8 +1,7 @@
-import os
-import shutil
+import os, shutil
 from random import sample
 
-OG_DIRECTORY = (r'C:\Users\mcgourthyn\Pictures\imageChunk') # partial piece of images used to train OG recongition model
+OG_DIRECTORY = (r'C:\Users\mcgourthyn\Pictures\caltech-101')
 
 DESTINATION_DIRECTORY = (r"C:\Users\mcgourthyn\Pictures\images")
 
