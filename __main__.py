@@ -30,4 +30,4 @@ if __name__ == '__main__':
                     prompts[folder] = user_enter
                     break
 
-    predict_on_new_images(model, prompts, directory, model_directory, 10) # 10 indicates that the model will search for and verify to download 50 images from bing
+    predict_on_new_images(model, prompts, directory, model_directory, 10) # 10 indicates that the model will search for and verify to download 10 images from bing
